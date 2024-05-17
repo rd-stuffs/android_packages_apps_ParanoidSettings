@@ -19,7 +19,11 @@ class BatteryMaximumCapacityPreferenceController(
     preferenceKey: String
 ) : BasePreferenceController(context, preferenceKey) {
 
-    override fun getAvailabilityStatus(): Int = AVAILABLE
+    override fun getAvailabilityStatus(): Int =
+        if (mContext.resources.getBoolean(R.bool.config_showBatteryMaximumCapacity))
+            AVAILABLE
+        else
+            UNSUPPORTED_ON_DEVICE
 
     override fun getSummary(): CharSequence {
         val batteryIntent = BatteryUtils.getBatteryIntent(mContext)
