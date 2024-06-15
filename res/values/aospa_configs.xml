@@ -8,6 +8,9 @@
     <!-- Battery info -->
     <bool name="config_show_battery_info" translatable="false">true</bool>
 
+    <!-- Show battery design capacity -->
+    <bool name="config_showBatteryDesignCapacity" translatable="false">true</bool>
+
     <!-- Show battery maximum capacity -->
     <bool name="config_showBatteryMaximumCapacity" translatable="false">true</bool>
 
